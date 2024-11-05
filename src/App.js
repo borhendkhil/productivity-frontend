@@ -9,6 +9,7 @@ import RegisterPage from './components/RegisterPage';
 import NavBar from './components/NavBar';
 
 const App = () => (
+  
   <Router>
     <CssBaseline />
     <NavBar/>
@@ -17,6 +18,7 @@ const App = () => (
     <Routes>
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
+      <Route path="/home" element={<ProtectedRoute element={<HomePage />} />} />
       <Route path="/" element={<ProtectedRoute element={<HomePage />} />} />
       {/* Add other routes here */}
     </Routes>

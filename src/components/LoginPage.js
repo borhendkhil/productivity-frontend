@@ -3,16 +3,19 @@ import React, { useState } from 'react';
 import AuthService from '../services/authService';
 
 const LoginPage = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await AuthService.login(username, password);
+      const response = await AuthService.login(email, password);
       if (response) {
         // window.location.href = '/';
         console.log('Login successful', response);
+        window.location.href = '/home';
+
+        
         
       }
     } catch (error) {
@@ -23,8 +26,8 @@ const LoginPage = () => {
   return (
     <form onSubmit={handleLogin}>
       <div>
-        <label>Username:</label>
-        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+        <label>email:</label>
+        <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
       </div>
       <div>
         <label>Password:</label>

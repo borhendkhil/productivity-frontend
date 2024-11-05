@@ -4,7 +4,12 @@ import { Link } from 'react-router-dom';
 import { AppBar, Toolbar, Typography, IconButton } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 
-const NavBar = () => (
+
+const NavBar = () => {
+  const token=localStorage.getItem('token');
+  
+  (
+
   <AppBar position="static">
     <Toolbar>
       <IconButton edge="start" color="inherit" aria-label="home">
@@ -17,6 +22,6 @@ const NavBar = () => (
       <Link to="/register" style={{ color: 'white', textDecoration: 'none' }}>Register</Link>
     </Toolbar>
   </AppBar>
-);
+)};
 
 export default NavBar;

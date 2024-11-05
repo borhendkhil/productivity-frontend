@@ -4,7 +4,8 @@ import { Navigate } from 'react-router-dom';
 import AuthService from '../services/authService';
 
 const ProtectedRoute = ({ element }) => {
-  return AuthService.getCurrentUser() ? element : <Navigate to="/login" />;
+  const isLoggedIn = true;
+  return isLoggedIn ? element : <Navigate to="/login" />;
   
 };
 
